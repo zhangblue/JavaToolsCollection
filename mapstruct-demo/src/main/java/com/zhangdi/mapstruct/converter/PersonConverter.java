@@ -17,6 +17,10 @@ public interface PersonConverter {
 
   PersonConverter INSTANCE = Mappers.getMapper(PersonConverter.class);
 
-  @Mappings(value = {@Mapping(source = "name", target = "userName")})
+  @Mappings(value = {
+      @Mapping(source = "name", target = "userName"),
+      @Mapping(source = "gender", target = "gender"),
+      @Mapping(target = "flag", expression = "java(com.zhangdi.mapstruct.func.ConvertFunction.convertDate(person.getToday()))")
+  })
   PersonDTO do2dto(PersonDO person);
 }

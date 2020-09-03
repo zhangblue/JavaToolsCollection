@@ -21,6 +21,8 @@ public class MapStructTest {
     personDO.setAge(26);
     personDO.setId(1);
     personDO.setBirthday(new Date());
+    personDO.setGender(Gender.FEMALE.name());
+    personDO.setToday(new Date());
     PersonDTO personDTO = PersonConverter.INSTANCE.do2dto(personDO);
     System.out.println(personDTO);
   }
