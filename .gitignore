@@ -100,5 +100,7 @@ fabric.properties
 # add by zhangd 20200903
 *.iml
 .idea/
+*/target/
+
 
 
