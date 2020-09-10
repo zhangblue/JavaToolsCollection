@@ -104,9 +104,7 @@ public class CacheDemo {
   }
 
   public void cacheLoadingDemo() {
-    CacheLoader<String, String> cacheLoader = CacheBuilder.newBuilder().maximumSize(3).build(
-        new CacheLoader<Object, Object>() {
-        });
+
   }
 
   /**

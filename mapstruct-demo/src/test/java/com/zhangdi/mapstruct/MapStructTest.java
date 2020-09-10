@@ -1,9 +1,12 @@
 package com.zhangdi.mapstruct;
 
 import com.zhangdi.mapstruct.converter.PersonConverter;
+import com.zhangdi.mapstruct.converter.StudentConverter;
 import com.zhangdi.mapstruct.enums.Gender;
 import com.zhangdi.mapstruct.model.PersonDO;
 import com.zhangdi.mapstruct.model.PersonDTO;
+import com.zhangdi.mapstruct.model.StudentDO;
+import com.zhangdi.mapstruct.model.StudentModel;
 import java.util.Date;
 import org.junit.Test;
 
@@ -25,6 +28,18 @@ public class MapStructTest {
     personDO.setToday(new Date());
     PersonDTO personDTO = PersonConverter.INSTANCE.do2dto(personDO);
     System.out.println(personDTO);
+  }
+
+  @Test
+  public void mapStructTest2() {
+    StudentDO studentDO = new StudentDO();
+    studentDO.setStName("张三");
+    studentDO.setStAge(10);
+    studentDO.setStGender(Gender.FEMALE);
+
+    StudentModel studentModel = StudentConverter.INSTANCE.do2dto(studentDO);
+
+    System.out.println(studentModel);
   }
 
 }
